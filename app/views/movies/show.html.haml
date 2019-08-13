@@ -1,5 +1,11 @@
 %h1= @movie.title
 .jumbotron
-  = @movie.description
+  -data = fetch_data(@movie)
+  .movie-show-container
+    .movie-poster
+      %img.img-rounded.poster{ src: data[:poster]}
+    .movie-text
+      = data[:plot]
+      %p= data[:rating]
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'
