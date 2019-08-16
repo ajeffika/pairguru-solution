@@ -9,10 +9,15 @@ gem "draper"
 gem "haml-rails"
 gem "jquery-rails"
 gem "sass-rails"
-gem "sqlite3"
+gem 'sqlite3'
 gem "uglifier"
 gem "pry-byebug"
-
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra/sinatra'
+gem 'redis'
+gem 'redis-namespace'
+gem 'redis-rails'
+gem 'redis-rack-cache'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
@@ -35,7 +40,6 @@ group :development, :test do
   gem "rspec-rails"
   gem "rubocop"
   gem "simplecov"
-  gem "pry-byebug"
 end
 
 group :test do

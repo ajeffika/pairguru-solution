@@ -3,9 +3,9 @@
   -data = fetch_data(@movie)
   .movie-show-container
     .movie-poster
-      %img.img-rounded.poster{ src: data[:poster]}
+      %img.img-rounded.poster{ src: $redis.hmget(@movie.title,'poster').join}
     .movie-text
-      = data[:plot]
-      %p= data[:rating]
+      = $redis.hmget(@movie.title,'plot').join
+      %p= 'Rating: ' +  $redis.hmget(@movie.title,'rating').join
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'

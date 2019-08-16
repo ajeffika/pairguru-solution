@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/sinatra/sinatra.git
+  revision: eee711bce740d38a9a91aa6028688c9a6d74b23b
+  specs:
+    rack-protection (2.0.5)
+      rack
+    sinatra (2.0.5)
+      mustermann (~> 1.0)
+      rack (~> 2.0)
+      rack-protection (= 2.0.5)
+      tilt (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -83,6 +95,7 @@ GEM
     choice (0.2.0)
     coderay (1.1.2)
     concurrent-ruby (1.1.5)
+    connection_pool (2.2.2)
     crass (1.0.4)
     debug_inspector (0.0.3)
     devise (4.6.2)
@@ -153,6 +166,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     msgpack (1.3.1)
+    mustermann (1.0.3)
     nio4r (2.4.0)
     nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
@@ -170,6 +184,8 @@ GEM
       pry (>= 0.10.4)
     public_suffix (3.1.1)
     rack (2.0.7)
+    rack-cache (1.9.0)
+      rack (>= 0.4)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.2.3)
@@ -206,6 +222,28 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    redis (4.1.2)
+    redis-actionpack (5.0.2)
+      actionpack (>= 4.0, < 6)
+      redis-rack (>= 1, < 3)
+      redis-store (>= 1.1.0, < 2)
+    redis-activesupport (5.0.7)
+      activesupport (>= 3, < 6)
+      redis-store (>= 1.3, < 2)
+    redis-namespace (1.6.0)
+      redis (>= 3.0.4)
+    redis-rack (2.0.5)
+      rack (>= 1.5, < 3)
+      redis-store (>= 1.2, < 2)
+    redis-rack-cache (2.1.0)
+      rack-cache (>= 1.6, < 2)
+      redis-store (>= 1.6, < 2)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.6.0)
+      redis (>= 2.2, < 5)
     regexp_parser (1.6.0)
     request_store (1.4.1)
       rack (>= 1.4)
@@ -258,6 +296,11 @@ GEM
     sexp_processor (4.12.1)
     shoulda-matchers (4.1.2)
       activesupport (>= 4.2.0)
+    sidekiq (5.2.7)
+      connection_pool (~> 2.2, >= 2.2.2)
+      rack (>= 1.5.0)
+      rack-protection (>= 1.5.0)
+      redis (>= 3.3.5, < 5)
     simplecov (0.17.0)
       docile (~> 1.1)
       json (>= 1.8, < 3)
@@ -314,15 +357,21 @@ DEPENDENCIES
   pry-rails
   rails (= 5.2.3)
   rails-erd
+  redis
+  redis-namespace
+  redis-rack-cache
+  redis-rails
   rspec-rails
   rubocop
   sass-rails
   shoulda-matchers
+  sidekiq
   simplecov
+  sinatra!
   spring
   spring-commands-rspec
   sqlite3
   uglifier
 
 BUNDLED WITH
-   1.16.2
+   1.17.2

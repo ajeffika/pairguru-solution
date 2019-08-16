@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-
   root "home#welcome"
+  require 'sidekiq/web'
+  mount Sidekiq::Web => "/sidekiq"
   resources :genres, only: :index do
     member do
       get "movies"
