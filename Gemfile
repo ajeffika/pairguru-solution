@@ -11,7 +11,6 @@ gem "jquery-rails"
 gem "sass-rails"
 gem 'sqlite3'
 gem "uglifier"
-gem "pry-byebug"
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'redis'
@@ -35,9 +34,11 @@ end
 
 group :development, :test do
   gem "capybara"
+  gem 'faker'
   gem "factory_bot_rails"
   gem "listen"
   gem "rspec-rails"
+  gem "pry-byebug"
   gem "rubocop"
   gem "simplecov"
 end

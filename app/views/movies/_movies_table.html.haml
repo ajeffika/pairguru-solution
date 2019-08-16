@@ -1,6 +1,6 @@
 %table.table.table-striped
   %tbody
-    - @movies.each_with_index do |movie, i|
+    - movies.each_with_index do |movie, i|
       -fetch_data(movie)
       %tr
         %td= i + 1
