@@ -1,6 +1,6 @@
 %h1= @movie.title
 .jumbotron
-  -data = fetch_data(@movie)
+  -fetch_data(@movie)
   .movie-show-container
     .movie-poster
       %img.img-rounded.poster{ src: $redis.hmget(@movie.title,'poster').join}
