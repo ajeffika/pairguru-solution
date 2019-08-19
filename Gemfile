@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "5.2.3"
+gem "rails", "5.2"
 
 gem "annotate"
 gem "bootstrap-sass"
@@ -9,9 +9,8 @@ gem "draper"
 gem "haml-rails"
 gem "jquery-rails"
 gem "sass-rails"
-gem 'sqlite3'
+gem "sqlite3"
 gem "uglifier"
-gem "pry-byebug"
 gem 'sidekiq'
 gem 'sinatra', github: 'sinatra/sinatra'
 gem 'redis'
@@ -35,9 +34,12 @@ end
 
 group :development, :test do
   gem "capybara"
+  gem 'faker'
   gem "factory_bot_rails"
+  gem "faker"
   gem "listen"
   gem "rspec-rails"
+  gem "pry-byebug"
   gem "rubocop"
   gem "simplecov"
 end
