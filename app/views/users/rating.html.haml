@@ -1,0 +1,4 @@
+.jumbotron
+  .text-center
+    - @users.each do |user|
+      %p= "#{user.name} #{t('misc.comments', count: user.comments.where('created_at > ?', 7.days.ago).count)}"
