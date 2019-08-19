@@ -28,4 +28,10 @@ Rails.application.routes.draw do
       get :export
     end
   end
+  resources :users, only: [] do
+    collection do
+      get :rating
+    end
+  end
 end
+

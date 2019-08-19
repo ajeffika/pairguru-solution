@@ -323,6 +323,7 @@ DEPENDENCIES
   factory_bot_rails
   faker
   haml-rails
+  i18n
   jquery-rails
   letter_opener
   listen
