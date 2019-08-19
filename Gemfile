@@ -40,7 +40,6 @@ group :development, :test do
   gem "listen"
   gem "pry-byebug"
   gem "rspec-rails"
-  gem 'rspec-sidekiq'
   gem "rubocop"
   gem "simplecov"
 end
@@ -48,4 +47,5 @@ end
 group :test do
   gem "shoulda-matchers"
   gem 'database_cleaner'
+  gem 'rspec-sidekiq'
 end
