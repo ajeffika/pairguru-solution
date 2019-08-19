@@ -104,6 +104,7 @@ GEM
     concurrent-ruby (1.1.5)
     connection_pool (2.2.2)
     crass (1.0.4)
+    database_cleaner (1.7.0)
     debug_inspector (0.0.3)
     devise (4.7.0)
       bcrypt (~> 3.0)
@@ -276,6 +277,9 @@ GEM
       rspec-expectations (~> 3.8.0)
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
+    rspec-sidekiq (3.0.3)
+      rspec-core (~> 3.0, >= 3.0.0)
+      sidekiq (>= 2.4.0)
     rspec-support (3.8.2)
     rubocop (0.74.0)
       jaro_winkler (~> 1.5.1)
@@ -353,12 +357,12 @@ DEPENDENCIES
   bootstrap-sass
   bullet
   capybara
+  database_cleaner
   devise
   draper
   factory_bot_rails
   faker
   haml-rails
-  i18n
   jquery-rails
   letter_opener
   listen
@@ -371,6 +375,7 @@ DEPENDENCIES
   redis-rack-cache
   redis-rails
   rspec-rails
+  rspec-sidekiq
   rubocop
   sass-rails
   shoulda-matchers
