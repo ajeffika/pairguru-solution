@@ -1,8 +1,12 @@
 class MovieDevSerializer < ActiveModel::Serializer
-  attributes :id, :title, :number_of_movies
+  attributes :id, :title, :movies_in_genre
   belongs_to :genre
 
-  def number_of_movies
-    NumberOfMoviesQuery.new(:genre_id).fetch
+  def movies_in_genre
+    Genre.find(object.genre.id).movies.count
+  end
+
+  def genre
+    { id: object.genre.id, name: object.genre.name }
   end
 end
