@@ -1,0 +1,10 @@
+%h2 Add a comment:
+.form-group
+  = form_with(model: [ @movie, @movie.comments.build ], local: true, class: 'form-group') do |form|
+    = form.label :body
+    %br/
+    = form.text_area :body, id: 'comment_body', class: 'form-control'
+    %p
+      = form.submit id:'Submit comment',  class: 'btn btn-primary'
+    = link_to 'Back', movies_path, class: 'btn btn-warning'
+

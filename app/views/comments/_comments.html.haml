@@ -1,0 +1,10 @@
+%h2 Comments
+- @movie.comments.each do |comment|
+  %p
+    .jumbotron
+      = comment.body
+      - if user_signed_in? && comment.user.id == current_user.id
+        = link_to 'Destroy Comment', [comment.movie, comment], id: 'delete_comment', class: 'btn btn-danger pull-right', method: :delete, data: { confirm: 'Are you sure?' }
+      %br/
+      = 'Posted ' + distance_of_time_in_words(comment.created_at, Time.now) + ' ago' + ' by ' + comment.user.name
+
