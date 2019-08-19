@@ -1,2 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.thumbnail{
+  max-height: 20rem;
+  max-width: 20rem;
+}
+
+.poster{
+  max-height: 40rem;
+  max-width: 40rem;
+}
+
+.movie-show-container{
+  display: flex;
+}
+
+.movie-poster{
+  margin: 1rem;
+}
+
+.movie-text{
+  margin: 1rem;
+}
