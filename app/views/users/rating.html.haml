@@ -1,4 +1,5 @@
-.jumbotron
-  .text-center
-    - @users.each do |user|
+- @users.each do |user|
+  #rating
+  .jumbotron
+    .text-center
       %p= "#{user.name} #{t('misc.comments', count: user.comments.where('created_at > ?', 7.days.ago).count)}"
