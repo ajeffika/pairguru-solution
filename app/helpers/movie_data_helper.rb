@@ -11,7 +11,6 @@ module MovieDataHelper
   def fetch_data(movie)
     if $redis.hgetall(movie.title) == {}
       x = fetch(movie)
-      ### using string as a hash key due to
       if x == {message: "Couldn't find Movie"}
         $redis.hmset(movie.title,
                      'title', movie.title,
